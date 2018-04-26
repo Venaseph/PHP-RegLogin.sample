@@ -1,19 +1,8 @@
 <?php
-	#include 'includes/navbar.html'
-	echo "Hello From SitesFolder!";
-	phpinfo();
+	include 'registration.php';
+	include 'registration.html';
+	# echo "sitesfolderworks!";
+	# phpinfo();
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-
-</head>
-
-<body>
-
-
-</body>
-</html>
 

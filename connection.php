@@ -1,11 +1,11 @@
 <?php
 	// Database credentials
-	define('DB_SERVER', 'localhost');
+	define('DB_SERVER', '127.0.0.1:3306');
 	define('DB_USERNAME', 'root');
-	define('DB_PASSWORD', 'Z@nder_21');
+	define('DB_PASSWORD', 'Password');
 	define('DB_NAME', 'videon');
  
-	// Attempt to connect to MySQL database
+	/* Attempt to connect to MySQL database */
 	$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
  
 	// Check connection
