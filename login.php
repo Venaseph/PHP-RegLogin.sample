@@ -1,7 +1,6 @@
 <?php
 // Include config file
 require_once 'connection.php';
-include 'login.html';
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -47,8 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->bind_result($username, $hashed_password);
                     if($stmt->fetch()){
                         if(password_verify($password, $hashed_password)){
-                            /* Password is correct, so start a new session and
-                            save the username to the session */
+                            // Start a new session, save user name as a variable for output
                             session_start();
                             $_SESSION['username'] = $username;      
                             header("location: welcome.php");
@@ -62,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username_err = 'No account found with that username.';
                 }
             } else {
-                echo "Something went wrong. Please try again later.";
+                echo "Please try again later.";
             }
         }
         
@@ -73,4 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     $mysqli->close();
 }
+
+// ugly but had to include down here to avoid issues with headers being created before they should.
+include 'login.html';
 ?>
