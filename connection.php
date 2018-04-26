@@ -5,11 +5,11 @@
 	define('DB_PASSWORD', 'Password');
 	define('DB_NAME', 'videon');
  
-	/* Attempt to connect to MySQL database */
+	// Connect to MySQL database
 	$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
  
-	// Check connection
+	// Check connection errors
 	if($mysqli === false){
-    	die("ERROR: Could not connect. " . $mysqli->connect_error);
+    	die("ERROR: Not working as intended" . $mysqli->connect_error);
 	}
 ?>
